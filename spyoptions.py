@@ -10,8 +10,8 @@ import pandas as pd
 import alpaca_trade_api as tradeapi
 
 # Initialize Alpaca clients with your provided API keys
-api_key = 'PKPICLW1ZL125SU9DXPX'
-api_secret = 'XQXgbYtG91FztvxMgbMnW1rHfiZPpAwxVEUyhI44'
+api_key = 
+api_secret = 
 trading_client = TradingClient(api_key, api_secret, paper=True)
 dataclient = StockHistoricalDataClient(api_key, api_secret)
 wss_client = tradeapi.Stream(api_key, api_secret)
