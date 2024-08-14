@@ -79,8 +79,8 @@ async def data_handler(data):
     SPY_Historical_Data['signal'] = 0
     SPY_Historical_Data.loc[SPY_Historical_Data['close'] < SPY_Historical_Data['buy_low'], 'signal'] = 1  # Buy
     SPY_Historical_Data.loc[SPY_Historical_Data['close'] > SPY_Historical_Data['sell_high'], 'signal'] = -1  # Sell
-    SPY_Historical_Data.loc[SPY_Historical_Data['close'] < SPY_Historical_Data['buy_low'], 'signal'] = 2  # Sell Call price high
-    SPY_Historical_Data.loc[SPY_Historical_Data['close'] > SPY_Historical_Data['sell_high'], 'signal'] = -2  # Sell Put price low
+    SPY_Historical_Data.loc[SPY_Historical_Data['close'] < SPY_Historical_Data['buy'], 'signal'] = 2  # Sell Call price high
+    SPY_Historical_Data.loc[SPY_Historical_Data['close'] > SPY_Historical_Data['sell'], 'signal'] = -2  # Sell Put price low
     SPY_Historical_Data['position'] = SPY_Historical_Data['signal'].shift()
 
     # Print the updated DataFrame
