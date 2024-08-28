@@ -89,7 +89,7 @@ async def data_handler(data):
     # Determine the latest position
     latest_position = SPY_Historical_Data['position'].iloc[-1]
 
-    # Execute trades based on the latest position
+    # Execute trades based on the latest position - must change contracts manually daily(or when expire)
     if latest_position == 1:
         execute_trade("SPY240814C00542000", OrderSide.BUY, 1)  # Buy one call option - adjust number for price of contract
     elif latest_position == -1:
